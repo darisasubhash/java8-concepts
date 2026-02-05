@@ -1,9 +1,6 @@
 package numberplaylist;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -70,6 +67,16 @@ public class NumberPlayListApp {
         minEven.ifPresent(n -> System.out.println("Minimum even number: " + n));
 
         maxEven.ifPresent(n -> System.out.println("Maximum even number: " + n));
+
+        //UC-2.7
+        int sum = numbers.stream()
+                .mapToInt(Integer::intValue)
+                .sum();
+        OptionalDouble average = numbers.stream()
+                .mapToInt(Integer::intValue)
+                .average();
+        System.out.println("Sum: " + sum);
+        average.ifPresent(avg -> System.out.println("Average: " + avg));
 
     }
 }
