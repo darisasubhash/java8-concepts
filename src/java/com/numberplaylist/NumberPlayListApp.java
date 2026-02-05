@@ -78,5 +78,14 @@ public class NumberPlayListApp {
         System.out.println("Sum: " + sum);
         average.ifPresent(avg -> System.out.println("Average: " + avg));
 
+        //UC-2.8
+        boolean allEven = numbers.stream()
+                .allMatch(n -> n % 2 == 0);
+        boolean anyEven = numbers.stream()
+                .anyMatch(n -> n % 2 == 0);
+
+        System.out.println("Are all numbers even " + allEven);
+        System.out.println("Is at least one number even  " + anyEven);
+
     }
 }
