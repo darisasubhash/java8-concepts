@@ -3,6 +3,7 @@ package numberplaylist;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class NumberPlayListApp {
     public static void main(String[] args) {
@@ -20,5 +21,10 @@ public class NumberPlayListApp {
 
         System.out.println("\nUsing Lambda Function:");
         numbers.forEach(number -> System.out.println(number));
+
+        Function<Integer,Double> doubleFunction=Integer::doubleValue;
+        System.out.println("Printing in double values ");
+        numbers.forEach(n-> {System.out.println("double number "+doubleFunction.apply(n));});
+
     }
 }
