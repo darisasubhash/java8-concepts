@@ -44,5 +44,11 @@ public class NumberPlayListApp {
                 .map(n -> n.doubleValue())
                 .collect(Collectors.toList());
         doubleList.forEach(System.out::println);
+
+        //UC-2.4
+        List<Integer> evenNumbers = numbers.stream()
+                .filter(n -> n % 2 == 0)
+                .collect(Collectors.toList());
+        evenNumbers.forEach(System.out::println);
     }
 }
