@@ -1,6 +1,7 @@
 package numberplaylist;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Consumer;
@@ -57,5 +58,18 @@ public class NumberPlayListApp {
                 .filter(n -> n % 2 == 0)
                 .findFirst();
         firstEvenNumber.ifPresent(n -> System.out.println("First even number: " + n));
+
+        //UC-2.6
+        Optional<Integer> minEven = numbers.stream()
+                .filter(n -> n % 2 == 0)
+                .min(Comparator.naturalOrder());
+
+        Optional<Integer> maxEven = numbers.stream()
+                .filter(n -> n % 2 == 0)
+                .max(Comparator.naturalOrder());
+        minEven.ifPresent(n -> System.out.println("Minimum even number: " + n));
+
+        maxEven.ifPresent(n -> System.out.println("Maximum even number: " + n));
+
     }
 }
