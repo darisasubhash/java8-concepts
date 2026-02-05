@@ -87,5 +87,10 @@ public class NumberPlayListApp {
         System.out.println("Are all numbers even " + allEven);
         System.out.println("Is at least one number even  " + anyEven);
 
+        //UC-2.9
+        List<Integer> sortedNumbers = numbers.stream()
+                .sorted()
+                .collect(Collectors.toList());
+        sortedNumbers.forEach(System.out::println);
     }
 }
