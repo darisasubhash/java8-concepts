@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class NumberPlayListApp {
     public static void main(String[] args) {
@@ -31,5 +32,11 @@ public class NumberPlayListApp {
         Predicate<Integer> isEven=n -> n%2 == 0;
         numbers.forEach(n -> System.out.println(isEven.test(n)));
         numbers.stream().filter(n-> n%2 ==0).forEach(System.out::println);
+
+        //UC-2.2
+        List<Double> doubledNumbers = numbers.stream()
+                .map(number -> number * 2.0)
+                .collect(Collectors.toList());
+        doubledNumbers.forEach(System.out::println);
     }
 }
