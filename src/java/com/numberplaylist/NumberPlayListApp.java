@@ -38,5 +38,11 @@ public class NumberPlayListApp {
                 .map(number -> number * 2.0)
                 .collect(Collectors.toList());
         doubledNumbers.forEach(System.out::println);
+
+        //UC-2.3
+        List<Double> doubleList = numbers.stream()
+                .map(n -> n.doubleValue())
+                .collect(Collectors.toList());
+        doubleList.forEach(System.out::println);
     }
 }
